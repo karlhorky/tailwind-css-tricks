@@ -1,2 +1,3 @@
-# tailwind-css-tricks
-A collection of useful React tricks
+# Tailwind CSS Tricks
+
+A collection of useful Tailwind CSS tricks
