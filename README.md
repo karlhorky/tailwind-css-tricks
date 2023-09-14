@@ -6,6 +6,7 @@ A collection of useful Tailwind CSS tricks
 
 Demo: [CodeSandbox](https://codesandbox.io/p/sandbox/github/karlhorky/tailwind-css-tricks/tree/main/demos/next-js-calendar-week-view)
 
-Code: [`demos/next-js-calendar-week-view/app/Calendar.tsx`](./demos/next-js-calendar-week-view/app/Calendar.tsx)
+Code:
 
-https://github.com/karlhorky/tailwind-css-tricks/raw/main/calendar-week-view.mp4
+- [`<Calendar />` component](./demos/next-js-calendar-week-view/app/Calendar.tsx)
+- [Usage of `<Calendar />` component](./demos/next-js-calendar-week-view/app/page.tsx)
