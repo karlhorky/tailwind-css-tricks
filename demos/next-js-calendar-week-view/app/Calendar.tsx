@@ -163,7 +163,7 @@ export default function Calendar<Route extends string>(props: Props<Route>) {
       );
 
       return twMerge(
-        'flex max-h-full flex-col break-words rounded p-[7px_6px_5px] text-[13px] leading-[20px] shadow-[inset_0_1px_1px_0_#ffffff] no-underline transition-[background-color] hover:z-10 hover:h-min hover:max-h-none hover:min-h-full',
+        'flex max-h-full flex-col break-words rounded p-[7px_6px_5px] text-[13px] leading-[20px] no-underline transition-[background-color] hover:z-10 hover:h-min hover:max-h-none hover:min-h-full',
         colStartClasses[
           Math.max(
             1,
