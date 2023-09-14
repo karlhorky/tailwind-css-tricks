@@ -10,3 +10,5 @@ Code:
 
 - [`<Calendar />` component](./demos/next-js-calendar-week-view/app/Calendar.tsx)
 - [Usage of `<Calendar />` component](./demos/next-js-calendar-week-view/app/page.tsx)
+
+https://github.com/karlhorky/tailwind-css-tricks/assets/1935696/02c5fb12-b3b7-439b-b689-23a8f695578a
