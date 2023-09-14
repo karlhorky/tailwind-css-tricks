@@ -8,4 +8,4 @@ Demo: [CodeSandbox](https://codesandbox.io/p/sandbox/github/karlhorky/tailwind-c
 
 Code: [`demos/next-js-calendar-week-view/app/Calendar.tsx`](./demos/next-js-calendar-week-view/app/Calendar.tsx)
 
-./calendar-week-view.mp4
+https://github.com/karlhorky/tailwind-css-tricks/raw/main/calendar-week-view.mp4
