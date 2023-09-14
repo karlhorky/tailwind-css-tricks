@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter.js';
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore.js';
+import minMax from 'dayjs/plugin/minMax.js';
 import { Route } from 'next';
 import Link from 'next/link';
 import { useCallback } from 'react';
@@ -14,6 +15,7 @@ declare module 'react' {
 
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
+dayjs.extend(minMax);
 
 const timeSlots = [
   '09:00',
@@ -159,7 +161,7 @@ export default function Calendar<Route extends string>(props: Props<Route>) {
           false,
         );
       const dateIndex = props.dates.findIndex((date) =>
-        date.startsWith(dayjs(event.start).format('YYYY-MM-DD')),
+        date.startsWith(event.start.format('YYYY-MM-DD')),
       );
 
       return twMerge(
@@ -174,7 +176,10 @@ export default function Calendar<Route extends string>(props: Props<Route>) {
           colSpanClasses[
             Math.min(
               props.dates.length - dateIndex,
-              event.end.diff(props.dates[0], 'day'),
+              event.end.diff(
+                dayjs.max(event.start, dayjs(props.dates[0])),
+                'days',
+              ),
             ) as keyof typeof colSpanClasses
           ],
         rowStartClasses[
