@@ -160,19 +160,23 @@ export default function Calendar<Route extends string>(props: Props<Route>) {
           },
           false,
         );
-      const dateIndex = props.dates.findIndex((date) =>
-        date.startsWith(event.start.format('YYYY-MM-DD')),
+
+      // Disallow negative index (if date outside of range, the
+      // event should start at the first date in props.dates)
+      const dateIndex = Math.max(
+        0,
+        props.dates.findIndex((date) => date.startsWith(yyyyMmDd(event.start))),
       );
 
       return twMerge(
         'flex max-h-full flex-col break-words rounded p-[7px_6px_5px] text-[13px] leading-[20px] no-underline transition-[background-color] hover:z-10 hover:h-min hover:max-h-none hover:min-h-full',
         colStartClasses[
-          (timeSlotColCount + (dateIndex || 0)) as keyof typeof colStartClasses
+          (timeSlotColCount + dateIndex) as keyof typeof colStartClasses
         ],
         event.isMultiDay &&
           colSpanClasses[
             Math.min(
-              props.dates.length - (dateIndex || 0),
+              props.dates.length - dateIndex,
               event.end.diff(
                 dayjs.max(event.start, dayjs(props.dates[0])),
                 'days',
