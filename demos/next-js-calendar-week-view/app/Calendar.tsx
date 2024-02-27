@@ -165,7 +165,9 @@ export default function Calendar<Route extends string>(props: Props<Route>) {
       // event should start at the first date in props.dates)
       const dateIndex = Math.max(
         0,
-        props.dates.findIndex((date) => date.startsWith(yyyyMmDd(event.start))),
+        props.dates.findIndex((date) =>
+          date.startsWith(event.start.format('YYYY-MM-DD')),
+        ),
       );
 
       return twMerge(
